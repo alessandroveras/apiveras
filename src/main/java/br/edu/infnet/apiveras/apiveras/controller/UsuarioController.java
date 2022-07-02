@@ -17,28 +17,23 @@ import br.edu.infnet.apiveras.apiveras.model.service.UsuarioService;
 @RestController
 @RequestMapping("/api/usuario")
 public class UsuarioController {
-	
+
 	@Autowired
 	private UsuarioService usuarioService;
 
 	@PostMapping(value = "/validar")
 	public Usuario validar(@RequestParam String login, @RequestParam String senha) {
-		
 		return usuarioService.validar(login, senha);
 	}
-	
+
 	@GetMapping(value = "/listar")
 	public List<Usuario> obterLista() {
-		
 		return usuarioService.obterLista();
-		
 	}
 
 	@DeleteMapping(value = "/{id}/excluir")
 	public void excluir(@PathVariable Integer id) {
-
 		usuarioService.excluir(id);
-
 	}
 
 }

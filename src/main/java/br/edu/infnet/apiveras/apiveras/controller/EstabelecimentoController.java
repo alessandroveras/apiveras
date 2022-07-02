@@ -12,15 +12,14 @@ import br.edu.infnet.apiveras.apiveras.model.service.EstabelecimentoService;
 @RestController
 @RequestMapping(value = "/api/estabelecimento")
 public class EstabelecimentoController {
-	
+
 	@Autowired
 	private EstabelecimentoService estabelecimentoService;
-	
+
 	@PostMapping(value = "/incluir")
 	public void incluir(@RequestBody Estabelecimento estabelecimento) {
-		
+
 		estabelecimentoService.incluir(estabelecimento);
-		
 	}
 
 }

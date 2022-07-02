@@ -16,20 +16,18 @@ import br.edu.infnet.apiveras.apiveras.model.service.FuncionarioService;
 @RestController
 @RequestMapping("/api/funcionario")
 public class FuncionarioController {
-	
+
 	@Autowired
 	private FuncionarioService funcionarioService;
-	
+
 	@GetMapping(value = "/{idEstabelecimento}/listar")
 	public List<Funcionario> obterLista(@PathVariable Integer idEstabelecimento) {
 		return funcionarioService.obterLista(idEstabelecimento);
-		
 	}
-	
+
 	@PostMapping(value = "/incluir")
 	public void incluir(@RequestBody Funcionario funcionario) {
 		funcionarioService.incluir(funcionario);
-		
 	}
 
 }

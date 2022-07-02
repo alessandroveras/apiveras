@@ -10,25 +10,20 @@ import br.edu.infnet.apiveras.apiveras.model.repository.UsuarioRepository;
 
 @Service
 public class UsuarioService {
-	
+
 	@Autowired
 	private UsuarioRepository usuarioRepository;
-	
-	public Usuario validar( String login, String senha) {
-		
+
+	public Usuario validar(String login, String senha) {
 		return usuarioRepository.validar(login, senha);
 	}
-	
+
 	public List<Usuario> obterLista() {
-		
 		return (List<Usuario>) usuarioRepository.findAll();
 	}
-	
 
 	public void excluir(Integer id) {
-		
 		usuarioRepository.deleteById(id);
-
 	}
 
 }
